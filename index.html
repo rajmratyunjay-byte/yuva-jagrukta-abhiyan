@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>युवा जागरूकता अभियान | युवा शक्ति</title>
+
+  <meta name="description" content="युवा जागरूकता अभियान — युवाओं को ज्ञान, संस्कार, सेवा और सकारात्मक सोच से जोड़ने का प्रयास।">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans Devanagari", sans-serif;
+      background: #f7f8fc;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #e65100;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9800, #e65100);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #e65100;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: #e65100;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 7px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        linear-gradient(rgba(35, 25, 15, 0.60), rgba(35, 25, 15, 0.60)),
+        linear-gradient(135deg, #ffb74d, #e65100, #5d4037);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 34px);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 720px;
+      margin: auto;
+      opacity: 0.95;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #e65100;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #e65100;
+    }
+
+    /* COMMON */
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #d84315;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-box {
+      background: #fff8f2;
+      border-left: 5px solid #e65100;
+      padding: 30px;
+      border-radius: 12px;
+      font-size: 18px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 24px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 22px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .card-icon {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #fff0e6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+    }
+
+    .card h3 {
+      color: #d84315;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    /* MESSAGE */
+    .message {
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    }
+
+    .quote {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 27px;
+      font-weight: bold;
+      color: #5d4037;
+    }
+
+    /* MISSION */
+    .mission-list {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 15px;
+    }
+
+    .mission-item {
+      background: white;
+      padding: 18px 22px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+      font-size: 17px;
+    }
+
+    .mission-item strong {
+      color: #e65100;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #2d1b12;
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-title h2 {
+      color: #ffb74d;
+    }
+
+    .contact .section-title p {
+      color: #ddd;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #17100c;
+      color: #ccc;
+      text-align: center;
+      padding: 22px 15px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      section {
+        padding: 55px 17px;
+      }
+
+      .quote {
+        font-size: 21px;
+      }
+
+      .about-box {
+        padding: 22px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+
+      <a href="#home" class="logo">
+        <span class="logo-icon">यु</span>
+        <span>युवा जागरूकता अभियान</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <nav id="navigation">
+        <a href="#home" onclick="closeMenu()">होम</a>
+        <a href="#about" onclick="closeMenu()">हमारे बारे में</a>
+        <a href="#mission" onclick="closeMenu()">हमारा उद्देश्य</a>
+        <a href="#message" onclick="closeMenu()">संदेश</a>
+        <a href="#contact" onclick="closeMenu()">संपर्क</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+
+    <div class="hero-content">
+
+      <h1>युवा जागरूकता अभियान</h1>
+
+      <h2>युवा शक्ति • संस्कार • सेवा • राष्ट्र निर्माण</h2>
+
+      <p>
+        जागरूक युवा ही मजबूत समाज और सशक्त राष्ट्र की नींव है।
+        आइए ज्ञान, संस्कार, सेवा और सकारात्मक सोच के साथ
+        एक बेहतर भविष्य का निर्माण करें।
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">अभियान के बारे में</a>
+        <a href="#mission" class="btn btn-outline">हमारा उद्देश्य</a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>हमारे बारे में</h2>
+        <p>युवाओं को जागरूक, जिम्मेदार और सकारात्मक दिशा देने का प्रयास।</p>
+      </div>
+
+      <div class="about-box">
+
+        <p>
+          <strong>युवा जागरूकता अभियान</strong> एक सकारात्मक पहल है,
+          जिसका उद्देश्य युवाओं को शिक्षा, संस्कार, सामाजिक जिम्मेदारी,
+          सेवा, पर्यावरण संरक्षण और राष्ट्र निर्माण जैसे विषयों के प्रति
+          जागरूक करना है।
+        </p>
+
+        <br>
+
+        <p>
+          हमारा विश्वास है कि युवा केवल देश का भविष्य नहीं,
+          बल्कि वर्तमान की सबसे बड़ी शक्ति हैं। सही सोच, सही दिशा
+          और सही कार्य से समाज में बड़ा परिवर्तन लाया जा सकता है।
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MISSION -->
+  <section id="mission">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>हमारा उद्देश्य</h2>
+        <p>छोटी-छोटी सकारात्मक पहल से बड़े सामाजिक परिवर्तन की ओर।</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h3>शिक्षा</h3>
+          <p>
+            ज्ञान और सीखने के प्रति युवाओं में सकारात्मक सोच विकसित करना।
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <h3>पर्यावरण</h3>
+          <p>
+            प्रकृति, जल, पेड़-पौधों और स्वच्छ वातावरण के प्रति जिम्मेदारी बढ़ाना।
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3>सेवा</h3>
+          <p>
+            समाज के प्रति सहयोग, संवेदना और सेवा की भावना को बढ़ावा देना।
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🇮🇳</div>
+          <h3>राष्ट्र निर्माण</h3>
+          <p>
+            जिम्मेदार नागरिक बनने और देश के विकास में योगदान देने के लिए प्रेरित करना।
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>सकारात्मक सोच</h3>
+          <p>
+            नकारात्मकता से दूर रहकर विवेकपूर्ण और रचनात्मक सोच को बढ़ावा देना।
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🕊️</div>
+          <h3>संस्कार</h3>
+          <p>
+            सम्मान, अनुशासन, सत्य, जिम्मेदारी और मानवीय मूल्यों को मजबूत करना।
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MESSAGE -->
+  <section id="message" class="message">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>युवा संदेश</h2>
+      </div>
+
+      <div class="quote">
+        “परिवर्तन की शुरुआत किसी और से नहीं,
+        स्वयं से होती है। एक जागरूक युवा
+        पूरे समाज को नई दिशा दे सकता है।”
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MISSION LIST -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>हम क्या कर सकते हैं?</h2>
+        <p>हर युवा अपने स्तर पर सकारात्मक बदलाव की शुरुआत कर सकता है।</p>
+      </div>
+
+      <div class="mission-list">
+
+        <div class="mission-item">
+          <strong>01.</strong>
+          अपने आसपास स्वच्छता और पर्यावरण के प्रति जागरूकता फैलाएँ।
+        </div>
+
+        <div class="mission-item">
+          <strong>02.</strong>
+          गलत जानकारी को बिना जाँचे आगे साझा न करें।
+        </div>
+
+        <div class="mission-item">
+          <strong>03.</strong>
+          जरूरतमंद लोगों की क्षमता के अनुसार सहायता करें।
+        </div>
+
+        <div class="mission-item">
+          <strong>04.</strong>
+          शिक्षा, कौशल और ज्ञान प्राप्त करने को प्राथमिकता दें।
+        </div>
+
+        <div class="mission-item">
+          <strong>05.</strong>
+          समाज और राष्ट्र के प्रति अपनी जिम्मेदारियों को समझें।
+        </div>
+
+        <div class="mission-item">
+          <strong>06.</strong>
+          सोशल मीडिया का उपयोग ज्ञान और सकारात्मक संदेश फैलाने के लिए करें।
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>हमसे जुड़ें</h2>
+        <p>
+          सकारात्मक सोच और जागरूकता के इस अभियान का हिस्सा बनें।
+        </p>
+      </div>
+
+      <div class="contact-box">
+
+        <p>
+          यदि आप इस अभियान से जुड़ना चाहते हैं या कोई सुझाव देना चाहते हैं,
+          तो हमसे संपर्क करें।
+        </p>
+
+        <div class="contact-buttons">
+
+          <a
+            class="btn btn-primary"
+            href="mailto:your-email@example.com">
+            ✉️ ईमेल करें
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="#home">
+            ⬆️ ऊपर जाएँ
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      युवा जागरूकता अभियान
+    </p>
+
+    <p>
+      युवा शक्ति • संस्कार • सेवा • राष्ट्र निर्माण
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navigation").classList.toggle("active");
+    }
+
+    function closeMenu() {
+      document.getElementById("navigation").classList.remove("active");
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+  </html>
