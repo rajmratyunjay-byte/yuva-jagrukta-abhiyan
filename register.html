@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Registration | युवा जागरूकता अभियान</title>
+
+  <meta
+    name="description"
+    content="युवा जागरूकता अभियान से जुड़ने के लिए Registration करें।"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      background: #f7f8fa;
+      color: #172b4d;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
+    }
+
+    .header {
+      max-width: 1100px;
+      margin: auto;
+      min-height: 82px;
+      padding: 10px 18px;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      font-size: 21px;
+      color: #d65b13;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #172b4d;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .back {
+      margin-left: auto;
+      background: #fff1e8;
+      color: #d65b13;
+      padding: 9px 16px;
+      border-radius: 25px;
+      font-weight: 700;
+    }
+
+    /* PAGE */
+
+    .page {
+      padding: 45px 18px 70px;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: auto;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .heading small {
+      color: #d65b13;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .heading h2 {
+      font-size: 38px;
+      margin-top: 5px;
+      color: #172b4d;
+    }
+
+    .heading p {
+      color: #737d8a;
+      max-width: 600px;
+      margin: 8px auto;
+    }
+
+    /* FORM */
+
+    .form-card {
+      background: #fff;
+      border-radius: 25px;
+      padding: 30px;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 15px 40px rgba(20,40,70,.08);
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .form-title .emoji {
+      font-size: 45px;
+      margin-bottom: 5px;
+    }
+
+    .form-title h3 {
+      font-size: 24px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: #243b5a;
+    }
+
+    label span {
+      color: #d65b13;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #d9dee5;
+      border-radius: 12px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      background: #fff;
+      color: #172b4d;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #d65b13;
+      box-shadow: 0 0 0 3px rgba(214,91,19,.08);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .photo-box {
+      border: 2px dashed #ddd;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      background: #fafafa;
+    }
+
+    .photo-preview {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: none;
+      margin: 0 auto 12px;
+      border: 4px solid #fff;
+      box-shadow: 0 5px 18px rgba(0,0,0,.12);
+    }
+
+    .photo-note {
+      font-size: 13px;
+      color: #7a8491;
+      margin-top: 8px;
+    }
+
+    .submit {
+      width: 100%;
+      height: 55px;
+      border: 0;
+      border-radius: 30px;
+      background: #d65b13;
+      color: white;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(214,91,19,.22);
+      margin-top: 10px;
+    }
+
+    .submit:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .message {
+      display: none;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .success {
+      background: #ecfdf3;
+      color: #087443;
+      border: 1px solid #b7ebcd;
+    }
+
+    .error {
+      background: #fff1f1;
+      color: #b42318;
+      border: 1px solid #ffd0d0;
+    }
+
+    /* SUCCESS CARD */
+
+    .member-card {
+      display: none;
+      margin-top: 25px;
+      padding: 25px;
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg,#fff,#fff7f0);
+      border: 1px solid #f0d7c5;
+      text-align: center;
+    }
+
+    .member-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 5px 20px rgba(0,0,0,.12);
+    }
+
+    .member-card h3 {
+      margin-top: 12px;
+      font-size: 24px;
+    }
+
+    .member-number {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 8px 18px;
+      border-radius: 25px;
+      background: #172b4d;
+      color: white;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .member-card p {
+      color: #687383;
+    }
+
+    .member-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .action {
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 700;
+      background: #d65b13;
+      color: white;
+    }
+
+    .action.secondary {
+      background: white;
+      color: #172b4d;
+      border: 1px solid #ddd;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #101d31;
+      color: white;
+      text-align: center;
+      padding: 30px 18px;
+    }
+
+    footer img {
+      width: 60px;
+    }
+
+    footer p {
+      color: #cbd3df;
+      margin-top: 7px;
+      font-size: 13px;
+    }
+
+    @media(max-width:650px) {
+
+      .header {
+        min-height: 75px;
+      }
+
+      .header img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .brand h1 {
+        font-size: 16px;
+      }
+
+      .brand span {
+        font-size: 8px;
+      }
+
+      .back {
+        padding: 7px 12px;
+        font-size: 13px;
+      }
+
+      .heading h2 {
+        font-size: 30px;
+      }
+
+      .form-card {
+        padding: 20px 16px;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="header">
+
+    <a href="index.html">
+      <img
+        src="logo.png"
+        alt="युवा जागरूकता अभियान"
+      >
+    </a>
+
+    <div class="brand">
+
+      <h1>
+        युवा जागरूकता अभियान
+      </h1>
+
+      <span>
+        YUVA JAGRUKTA ABHIYAN
+      </span>
+
+    </div>
+
+    <a
+      href="index.html"
+      class="back"
+    >
+      ← वापस
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- PAGE -->
+
+<main class="page">
+
+  <div class="container">
+
+
+    <div class="heading">
+
+      <small>MEMBERSHIP REGISTRATION</small>
+
+      <h2>
+        अभियान से जुड़ें
+      </h2>
+
+      <p>
+        युवा जागरूकता अभियान का सदस्य बनने के लिए
+        नीचे दी गई जानकारी भरें।
+      </p>
+
+    </div>
+
+
+    <div class="form-card">
+
+
+      <div class="form-title">
+
+        <div class="emoji">🤝</div>
+
+        <h3>
+          सदस्यता पंजीकरण
+        </h3>
+
+      </div>
+
+
+      <form id="registrationForm">
+
+
+        <div class="row">
+
+
+          <!-- NAME -->
+
+          <div class="field full">
+
+            <label>
+              पूरा नाम <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="fullName"
+              placeholder="अपना पूरा नाम लिखें"
+              required
+            >
+
+          </div>
+
+
+          <!-- MOBILE -->
+
+          <div class="field">
+
+            <label>
+              मोबाइल नंबर <span>*</span>
+            </label>
+
+            <input
+              type="tel"
+              id="mobile"
+              placeholder="10 अंकों का मोबाइल नंबर"
+              maxlength="10"
+              inputmode="numeric"
+              required
+            >
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="field">
+
+            <label>
+              ईमेल
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="example@gmail.com"
+            >
+
+          </div>
+
+
+          <!-- STATE -->
+
+          <div class="field">
+
+            <label>
+              राज्य <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="state"
+              placeholder="अपना राज्य"
+              required
+            >
+
+          </div>
+
+
+          <!-- DISTRICT -->
+
+          <div class="field">
+
+            <label>
+              जिला <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="district"
+              placeholder="अपना जिला"
+              required
+            >
+
+          </div>
+
+
+          <!-- INTEREST -->
+
+          <div class="field full">
+
+            <label>
+              आपकी रुचि
+            </label>
+
+            <select id="interests">
+
+              <option value="">
+                अपनी रुचि चुनें
+              </option>
+
+              <option value="युवा जागरूकता">
+                युवा जागरूकता
+              </option>
+
+              <option value="सामाजिक सेवा">
+                सामाजिक सेवा
+              </option>
+
+              <option value="शिक्षा">
+                शिक्षा
+              </option>
+
+              <option value="पर्यावरण">
+                पर्यावरण
+              </option>
+
+              <option value="महिला जागरूकता">
+                महिला जागरूकता
+              </option>
+
+              <option value="डिजिटल जागरूकता">
+                डिजिटल जागरूकता
+              </option>
+
+              <option value="अन्य">
+                अन्य
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- PHOTO -->
+
+          <div class="field full">
+
+            <label>
+              सदस्य का फोटो
+            </label>
+
+            <div class="photo-box">
+
+              <img
+                id="photoPreview"
+                class="photo-preview"
+                alt="Photo Preview"
+              >
+
+              <input
+                type="file"
+                id="photo"
+                accept="image/jpeg,image/png,image/webp"
+              >
+
+              <div class="photo-note">
+                JPG / PNG / WEBP • अधिकतम 2 MB
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- MESSAGE -->
+
+          <div
+            id="message"
+            class="message"
+          ></div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            id="submitBtn"
+            class="submit"
+          >
+            Registration करें →
+          </button>
+
+
+      </form>
+
+
+      <!-- MEMBER CREATED -->
+
+      <div
+        id="memberCard"
+        class="member-card"
+      >
+
+        <img
+          id="memberLogo"
+          src="logo.png"
+          alt="Logo"
+        >
+
+        <h3>
+          Registration सफल!
+        </h3>
+
+        <div
+          id="memberNumber"
+          class="member-number"
+        >
+        </div>
+
+        <p>
+          आपका Member ID सुरक्षित रखें।
+          इसी ID से आगे सदस्यता सत्यापित की जा सकेगी।
+        </p>
+
+        <div class="member-actions">
+
+          <a
+            href="index.html#member"
+            class="action"
+          >
+            Member ID देखें
+          </a>
+
+          <a
+            href="index.html"
+            class="action secondary"
+          >
+            Home पर जाएँ
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <img
+    src="logo.png"
+    alt="Logo"
+  >
+
+  <h3>
+    युवा जागरूकता अभियान
+  </h3>
+
+  <p>
+    जागरूक युवा • जिम्मेदार नागरिक • सशक्त समाज
+  </p>
+
+</footer>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+  /* =====================================
+     SUPABASE CONFIG
+     ===================================== */
+
+  const SUPABASE_URL =
+    "https://chgkmufptsacurnxpm.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_ydpmmLDO7S3EXUC_DdsiVA_vdXvMbSw";
+
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+
+  /* =====================================
+     PHOTO PREVIEW
+     ===================================== */
+
+  const photoInput =
+    document.getElementById("photo");
+
+  const photoPreview =
+    document.getElementById("photoPreview");
+
+
+  photoInput.addEventListener(
+    "change",
+    function() {
+
+      const file = this.files[0];
+
+      if (!file) {
+        return;
+      }
+
+
+      if (file.size > 2 * 1024 * 1024) {
+
+        alert(
+          "फोटो का आकार 2 MB से कम होना चाहिए।"
+        );
+
+        this.value = "";
+        photoPreview.style.display = "none";
+
+        return;
+      }
+
+
+      const reader =
+        new FileReader();
+
+
+      reader.onload =
+        function(event) {
+
+          photoPreview.src =
+            event.target.result;
+
+          photoPreview.style.display =
+            "block";
+
+        };
+
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
+
+  /* =====================================
+     MEMBER ID
+     ===================================== */
+
+  function generateMemberId() {
+
+    const random =
+      Math.floor(
+        100000 +
+        Math.random() * 900000
+      );
+
+    return "YJA-" + random;
+
+  }
+
+
+  /* =====================================
+     IMAGE TO DATA URL
+     ===================================== */
+
+  function imageToDataURL(file) {
+
+    return new Promise(
+      (resolve, reject) => {
+
+        if (!file) {
+          resolve(null);
+          return;
+        }
+
+
+        const reader =
+          new FileReader();
+
+
+        reader.onload =
+          () => resolve(reader.result);
+
+        reader.onerror =
+          () => reject(
+            new Error(
+              "फोटो पढ़ी नहीं जा सकी।"
+            )
+          );
+
+
+        reader.readAsDataURL(file);
+
+      }
+    );
+
+  }
+
+
+  /* =====================================
+     FORM SUBMIT
+     ===================================== */
+
+  document
+    .getElementById("registrationForm")
+    .addEventListener(
+      "submit",
+      async function(event) {
+
+        event.preventDefault();
+
+
+        const message =
+          document.getElementById("message");
+
+        const button =
+          document.getElementById("submitBtn");
+
+
+        const fullName =
+          document
+          .getElementById("fullName")
+          .value
+          .trim();
+
+
+        const mobile =
+          document
+          .getElementById("mobile")
+          .value
+          .trim();
+
+
+        const email =
+          document
+          .getElementById("email")
+          .value
+          .trim();
+
+
+        const state =
+          document
+          .getElementById("state")
+          .value
+          .trim();
+
+
+        const district =
+          document
+          .getElementById("district")
+          .value
+          .trim();
+
+
+        const interests =
+          document
+          .getElementById("interests")
+          .value;
+
+
+        const photoFile =
+          document
+          .getElementById("photo")
+          .files[0];
+
+
+        /* MOBILE VALIDATION */
+
+        if (!/^[0-9]{10}$/.test(mobile)) {
+
+          showError(
+            "कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।"
+          );
+
+          return;
+
+        }
+
+
+        /* PHOTO SIZE */
+
+        if (
+          photoFile &&
+          photoFile.size >
+          2 * 1024 * 1024
+        ) {
+
+          showError(
+            "फोटो 2 MB से छोटी होनी चाहिए।"
+          );
+
+          return;
+
+        }
+
+
+        button.disabled = true;
+
+        button.textContent =
+          "Registration हो रही है...";
+
+
+        hideMessage();
+
+
+        try {
+
+          /*
+           * Generate unique Member ID
+           */
+
+          let memberId;
+
+          let exists = true;
+
+
+          while (exists) {
+
+            memberId =
+              generateMemberId();
+
+
+            const check =
+              await supabaseClient
+              .from("members")
+              .select("member_id")
+              .eq(
+                "member_id",
+                memberId
+              )
+              .maybeSingle();
+
+
+            if (!check.data) {
+              exists = false;
+            }
+
+          }
+
+
+          /*
+           * Photo
+           *
+           * अभी फोटो को compressed नहीं किया जा रहा।
+           * इसे database में text के रूप में रखा जाएगा।
+           */
+
+          let photoUrl = null;
+
+
+          if (photoFile) {
+
+            photoUrl =
+              await imageToDataURL(
+                photoFile
+              );
+
+          }
+
+
+          /*
+           * INSERT MEMBER
+           */
+
+          const { data, error } =
+            await supabaseClient
+            .from("members")
+            .insert({
+
+              member_id:
+                memberId,
+
+              full_name:
+                fullName,
+
+              mobile:
+                mobile,
+
+              email:
+                email || null,
+
+              photo_url:
+                photoUrl,
+
+              membership_status:
+                "active",
+
+              state:
+                state,
+
+              district:
+                district,
+
+              interests:
+                interests || null
+
+            })
+            .select()
+            .single();
+
+
+          if (error) {
+
+            console.error(
+              "Supabase Error:",
+              error
+            );
+
+            throw error;
+
+          }
+
+
+          /*
+           * SUCCESS
+           */
+
+          document
+            .getElementById("memberNumber")
+            .textContent =
+              memberId;
+
+
+          document
+            .getElementById("memberCard")
+            .style.display =
+              "block";
+
+
+          document
+            .getElementById("registrationForm")
+            .style.display =
+              "none";
+
+
+          showSuccess(
+            "Registration सफलतापूर्वक पूरा हुआ।"
+          );
+
+
+          window.scrollTo({
+            top: document
+              .getElementById("memberCard")
+              .offsetTop - 30,
+
+            behavior: "smooth"
+          });
+
+
+        }
+
+        catch (error) {
+
+          console.error(error);
+
+
+          let errorText =
+            "Registration नहीं हो सका।";
+
+
+          if (
+            error &&
+            error.code === "42501"
+          ) {
+
+            errorText =
+              "Supabase ने Registration को अनुमति नहीं दी। RLS policy सेट करनी होगी।";
+
+          }
+
+
+          if (
+            error &&
+            error.message
+          ) {
+
+            console.log(
+              error.message
+            );
+
+          }
+
+
+          showError(
+            errorText
+          );
+
+        }
+
+        finally {
+
+          button.disabled = false;
+
+          button.textContent =
+            "Registration करें →";
+
+        }
+
+      }
+    );
+
+
+  /* =====================================
+     MESSAGE FUNCTIONS
+     ===================================== */
+
+  function showError(text) {
+
+    const message =
+      document.getElementById("message");
+
+    message.className =
+      "message error";
+
+    message.textContent =
+      "❌ " + text;
+
+    message.style.display =
+      "block";
+
+  }
+
+
+  function showSuccess(text) {
+
+    const message =
+      document.getElementById("message");
+
+    message.className =
+      "message success";
+
+    message.textContent =
+      "✅ " + text;
+
+    message.style.display =
+      "block";
+
+  }
+
+
+  function hideMessage() {
+
+    document
+      .getElementById("message")
+      .style.display =
+      "none";
+
+  }
+
+</script>
+
+</body>
+  </html>
