@@ -987,33 +987,7 @@
            * Generate unique Member ID
            */
 
-          let memberId;
-
-          let exists = true;
-
-
-          while (exists) {
-
-            memberId =
-              generateMemberId();
-
-
-            const check =
-              await supabaseClient
-              .from("members")
-              .select("member_id")
-              .eq(
-                "member_id",
-                memberId
-              )
-              .maybeSingle();
-
-
-            if (!check.data) {
-              exists = false;
-            }
-
-          }
+          const memberId = generateMemberId();
 
 
           /*
@@ -1040,7 +1014,7 @@
            * INSERT MEMBER
            */
 
-          const { data, error } =
+          const { error } =
             await supabaseClient
             .from("members")
             .insert({
@@ -1073,8 +1047,7 @@
                 interests || null
 
             })
-            .select()
-            .single();
+          
 
 
           if (error) {
