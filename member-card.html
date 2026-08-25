@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07111c"
+  >
+
+  <meta
+    name="description"
+    content="युवा जागरूकता अभियान — डिजिटल सदस्य कार्ड।"
+  >
+
+  <title>
+    डिजिटल सदस्य कार्ड | युवा जागरूकता अभियान
+  </title>
+
+
+  <!-- =====================================================
+       MEMBER CARD CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="member-card.css"
+  >
+
+
+  <!-- =====================================================
+       SUPABASE
+  ====================================================== -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="member-header">
+
+    <a
+      href="index.html"
+      class="member-brand"
+    >
+
+      <img
+        src="logo-round.png"
+        alt="युवा जागरूकता अभियान"
+        class="header-logo"
+      >
+
+      <div>
+
+        <strong>
+          युवा जागरूकता अभियान
+        </strong>
+
+        <span>
+          युवा शक्ति • सनातन संस्कृति • राष्ट्र निर्माण
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <button
+      type="button"
+      class="back-btn"
+      id="logoutBtn"
+    >
+      Logout
+    </button>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
+
+  <main class="member-page">
+
+
+    <!-- ===================================================
+         INTRO
+    ==================================================== -->
+
+    <div class="page-intro">
+
+      <span class="intro-kicker">
+        DIGITAL IDENTITY
+      </span>
+
+
+      <h1>
+        डिजिटल <em>सदस्य कार्ड</em>
+      </h1>
+
+
+      <p>
+        अभियान से जुड़ें और अपनी डिजिटल सदस्य पहचान प्राप्त करें।
+        यह कार्ड आपकी सदस्यता और अभियान से आपके जुड़ाव की डिजिटल पहचान है।
+      </p>
+
+    </div>
+
+
+
+    <!-- ===================================================
+         DIGITAL MEMBER CARD
+    ==================================================== -->
+
+    <section class="card-stage">
+
+      <div class="digital-card">
+
+
+        <!-- =================================================
+             CARD TOP
+        ================================================== -->
+
+        <div class="card-top">
+
+          <div class="card-brand">
+
+            <img
+              src="logo-round.png"
+              alt="अभियान लोगो"
+              class="card-logo"
+            >
+
+            <div>
+
+              <strong>
+                युवा जागरूकता अभियान
+              </strong>
+
+              <span>
+                DIGITAL MEMBER
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="card-status"
+            id="memberStatus"
+          >
+
+            <span></span>
+            ACTIVE
+
+          </div>
+
+        </div>
+
+
+
+        <!-- GOLD LINE -->
+
+        <div class="gold-line"></div>
+
+
+
+        <!-- =================================================
+             MEMBER INFORMATION
+        ================================================== -->
+
+        <div class="member-information">
+
+
+          <!-- MEMBER PHOTO -->
+
+          <div class="member-photo-wrap">
+
+            <div
+              class="member-photo"
+              id="memberPhotoBox"
+            >
+
+              <span>
+                PHOTO
+              </span>
+
+            </div>
+
+
+            <small>
+              सदस्य फोटो
+            </small>
+
+          </div>
+
+
+
+          <!-- MEMBER DETAILS -->
+
+          <div class="member-details">
+
+            <span class="member-label">
+              सदस्य
+            </span>
+
+
+            <h2 id="memberName">
+              जानकारी लोड हो रही है...
+            </h2>
+
+
+            <!-- MEMBER ID -->
+
+            <div class="member-id">
+
+              <span>
+                MEMBER ID
+              </span>
+
+              <strong id="memberId">
+                —
+              </strong>
+
+            </div>
+
+
+            <!-- META -->
+
+            <div class="member-meta">
+
+
+              <div>
+
+                <span>
+                  सदस्यता
+                </span>
+
+                <strong id="membershipYear">
+                  —
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  राज्य
+                </span>
+
+                <strong id="memberState">
+                  —
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  जिला
+                </span>
+
+                <strong id="memberDistrict">
+                  —
+                </strong>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QR VERIFICATION
+        ================================================== -->
+
+        <div class="verification-area">
+
+
+          <div class="verification-text">
+
+            <span class="verify-icon">
+              ✓
+            </span>
+
+
+            <div>
+
+              <strong>
+                सदस्य सत्यापन
+              </strong>
+
+              <small>
+                QR स्कैन करके सदस्य ID देखें
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="member-qr">
+
+            <div id="qrcode">
+
+              <span>
+                QR तैयार हो रहा है...
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARD FOOTER
+        ================================================== -->
+
+        <div class="card-footer">
+
+          <span>
+            ॐ
+          </span>
+
+
+          <p>
+            युवा शक्ति • सनातन संस्कृति • राष्ट्र निर्माण
+          </p>
+
+
+          <span id="cardYear">
+            2026
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ACTION BUTTONS
+    ================================================== -->
+
+    <div class="card-actions">
+
+
+      <button
+        type="button"
+        class="action-primary"
+        id="printCardBtn"
+      >
+        🖨 कार्ड प्रिंट / PDF
+      </button>
+
+
+      <a
+        href="index.html"
+        class="action-secondary"
+      >
+        ← वेबसाइट पर वापस जाएँ
+      </a>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         BENEFITS
+    ================================================== -->
+
+    <section class="benefits">
+
+
+      <div class="section-title">
+
+        <span>
+          सदस्यता
+        </span>
+
+
+        <h2>
+          डिजिटल सदस्यता के लाभ
+        </h2>
+
+      </div>
+
+
+
+      <div class="benefit-grid">
+
+
+        <article class="benefit-card">
+
+          <div>
+            ✦
+          </div>
+
+          <h3>
+            डिजिटल पहचान
+          </h3>
+
+          <p>
+            अभियान से जुड़ी आपकी डिजिटल सदस्य पहचान।
+          </p>
+
+        </article>
+
+
+
+        <article class="benefit-card">
+
+          <div>
+            ◇
+          </div>
+
+          <h3>
+            सदस्य ID
+          </h3>
+
+          <p>
+            प्रत्येक सदस्य के लिए अलग सदस्य पहचान संख्या।
+          </p>
+
+        </article>
+
+
+
+        <article class="benefit-card">
+
+          <div>
+            ✓
+          </div>
+
+          <h3>
+            QR सत्यापन
+          </h3>
+
+          <p>
+            QR के माध्यम से सदस्य ID को आसानी से देखा जा सकता है।
+          </p>
+
+        </article>
+
+
+
+        <article class="benefit-card">
+
+          <div>
+            ॐ
+          </div>
+
+          <h3>
+            अभियान से जुड़ाव
+          </h3>
+
+          <p>
+            युवा शक्ति, सनातन संस्कृति और राष्ट्र निर्माण की सकारात्मक पहल।
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       MEMBER CARD JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      async function () {
+
+
+        /* =================================================
+           SUPABASE CONFIG
+        ================================================= */
+
+        const SUPABASE_URL =
+          "https://chgkmufptsacunrxnxpm.supabase.co";
+
+
+        const SUPABASE_KEY =
+          "sb_publishable_ydpmmLDO7S3EXUC_DdsiVA_vdXvMbSw";
+
+
+        const supabaseClient =
+          window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+          );
+
+
+
+        /* =================================================
+           ELEMENTS
+        ================================================= */
+
+        const nameElement =
+          document.getElementById(
+            "memberName"
+          );
+
+
+        const idElement =
+          document.getElementById(
+            "memberId"
+          );
+
+
+        const yearElement =
+          document.getElementById(
+            "membershipYear"
+          );
+
+
+        const stateElement =
+          document.getElementById(
+            "memberState"
+          );
+
+
+        const districtElement =
+          document.getElementById(
+            "memberDistrict"
+          );
+
+
+        const photoBox =
+          document.getElementById(
+            "memberPhotoBox"
+          );
+
+
+        const statusElement =
+          document.getElementById(
+            "memberStatus"
+          );
+
+
+        const qrBox =
+          document.getElementById(
+            "qrcode"
+          );
+
+
+        const cardYear =
+          document.getElementById(
+            "cardYear"
+          );
+
+
+        const printButton =
+          document.getElementById(
+            "printCardBtn"
+          );
+
+
+        const logoutButton =
+          document.getElementById(
+            "logoutBtn"
+          );
+
+
+
+        /* =================================================
+           BASIC ELEMENT CHECK
+        ================================================== */
+
+        console.log(
+          "Member Card: JavaScript started"
+        );
+
+
+        console.log(
+          "Member Card: Elements loaded"
+        );
+
+
+
+        /* =================================================
+           PRINT CARD
+        ================================================== */
+
+        if (printButton) {
+
+          printButton.addEventListener(
+            "click",
+            function () {
+
+              window.print();
+
+            }
+          );
+
+        }
+
+
+
+        /* =================================================
+           LOGOUT
+        ================================================== */
+
+        if (logoutButton) {
+
+          logoutButton.addEventListener(
+            "click",
+            async function () {
+
+              logoutButton.disabled = true;
+
+              logoutButton.textContent =
+                "Logout हो रहा है...";
+
+
+              try {
+
+                const {
+                  error
+                } =
+                  await supabaseClient.auth.signOut();
+
+
+                if (error) {
+
+                  throw error;
+
+                }
+
+
+                /* -----------------------------------------
+                   CACHE साफ करें
+                ----------------------------------------- */
+
+                const localKeys = [
+
+                  "yja_member_name",
+                  "yja_member_email",
+                  "yja_member_mobile",
+                  "yja_member_state",
+                  "yja_member_district",
+                  "yja_member_id",
+                  "yja_member_interests",
+                  "yja_member_photo"
+
+                ];
+
+
+                localKeys.forEach(
+                  function (key) {
+
+                    localStorage.removeItem(
+                      key
+                    );
+
+                  }
+                );
+
+
+                window.location.replace(
+                  "login.html"
+                );
+
+              }
+
+
+              catch (error) {
+
+                console.error(
+                  "Logout Error:",
+                  error
+                );
+
+
+                logoutButton.disabled =
+                  false;
+
+
+                logoutButton.textContent =
+                  "Logout";
+
+
+                alert(
+                  "Logout नहीं हो सका। कृपया दोबारा प्रयास करें।"
+                );
+
+              }
+
+            }
+          );
+
+        }
+
+
+
+        /* =================================================
+           HELPER: SET TEXT
+        ================================================== */
+
+        function setText(
+          element,
+          value,
+          fallback = "—"
+        ) {
+
+          if (!element) {
+
+            return;
+
+          }
+
+
+          if (
+            value === null ||
+            value === undefined ||
+            String(value).trim() === ""
+          ) {
+
+            element.textContent =
+              fallback;
+
+            return;
+
+          }
+
+
+          element.textContent =
+            String(value);
+
+        }
+
+
+
+        /* =================================================
+           SHOW LOADING
+        ================================================== */
+
+        function showLoading() {
+
+          setText(
+            nameElement,
+            "जानकारी लोड हो रही है..."
+          );
+
+
+          setText(
+            idElement,
+            "—"
+          );
+
+
+          setText(
+            yearElement,
+            "—"
+          );
+
+
+          setText(
+            stateElement,
+            "—"
+          );
+
+
+          setText(
+            districtElement,
+            "—"
+          );
+
+
+          if (qrBox) {
+
+            qrBox.innerHTML =
+              '<span style="font-size:11px;color:#777;text-align:center;padding:8px;display:block;">QR तैयार हो रहा है...</span>';
+
+          }
+
+        }
+
+
+
+        /* =================================================
+           SHOW ERROR
+        ================================================== */
+
+        function showCardError(
+          title,
+          detail = ""
+        ) {
+
+          setText(
+            nameElement,
+            title,
+            "जानकारी उपलब्ध नहीं"
+          );
+
+
+          setText(
+            idElement,
+            "—"
+          );
+
+
+          setText(
+            yearElement,
+            "—"
+          );
+
+
+          setText(
+            stateElement,
+            "—"
+          );
+
+
+          setText(
+            districtElement,
+            "—"
+          );
+
+
+          if (qrBox) {
+
+            qrBox.innerHTML =
+              '<span style="font-size:11px;color:#777;text-align:center;padding:8px;display:block;">QR उपलब्ध नहीं है</span>';
+
+          }
+
+
+          console.error(
+            "Member Card Error:",
+            detail
+          );
+
+        }
+
+
+
+        /* =================================================
+           RENDER PHOTO
+        ================================================== */
+
+        function renderPhoto(
+          photoURL
+        ) {
+
+          if (!photoBox) {
+
+            return;
+
+          }
+
+
+          if (!photoURL) {
+
+            photoBox.innerHTML =
+              "<span>PHOTO</span>";
+
+            return;
+
+          }
+
+
+          photoBox.innerHTML =
+            "";
+
+
+          const img =
+            document.createElement(
+              "img"
+            );
+
+
+          img.src =
+            photoURL;
+
+
+          img.alt =
+            "सदस्य फोटो";
+
+
+          img.style.width =
+            "100%";
+
+
+          img.style.height =
+            "100%";
+
+
+          img.style.objectFit =
+            "cover";
+
+
+          img.style.display =
+            "block";
+
+
+          img.onerror =
+            function () {
+
+              photoBox.innerHTML =
+                "<span>PHOTO</span>";
+
+            };
+
+
+          photoBox.appendChild(
+            img
+          );
+
+        }
+
+
+
+        /* =================================================
+           GENERATE QR
+        ================================================== */
+
+        function renderQR(
+          memberId
+        ) {
+
+          if (!qrBox) {
+
+            return;
+
+          }
+
+
+          if (!memberId) {
+
+            qrBox.innerHTML =
+              '<span style="font-size:11px;color:#777;text-align:center;padding:8px;display:block;">Member ID उपलब्ध नहीं है</span>';
+
+            return;
+
+          }
+
+
+          try {
+
+
+            const verificationURL =
+              new URL(
+                "verify.html?member=" +
+                encodeURIComponent(
+                  memberId
+                ),
+                window.location.href
+              ).href;
+
+
+            const qrImage =
+              document.createElement(
+                "img"
+              );
+
+
+            qrImage.alt =
+              "Member Verification QR";
+
+
+            qrImage.style.width =
+              "100%";
+
+
+            qrImage.style.height =
+              "100%";
+
+
+            qrImage.style.display =
+              "block";
+
+
+            qrImage.src =
+              "https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=8&data=" +
+              encodeURIComponent(
+                verificationURL
+              );
+
+
+            qrImage.onerror =
+              function () {
+
+                qrBox.innerHTML =
+                  '<span style="font-size:11px;color:#777;text-align:center;padding:8px;display:block;">QR उपलब्ध नहीं है</span>';
+
+              };
+
+
+            qrBox.innerHTML =
+              "";
+
+
+            qrBox.appendChild(
+              qrImage
+            );
+
+          }
+
+
+          catch (error) {
+
+            console.error(
+              "QR Error:",
+              error
+            );
+
+
+            qrBox.innerHTML =
+              '<span style="font-size:11px;color:#777;text-align:center;padding:8px;display:block;">QR उपलब्ध नहीं है</span>';
+
+          }
+
+        }
+
+
+
+        /* =================================================
+           RENDER MEMBER
+        ================================================== */
+
+        function renderMember(
+          member
+        ) {
+
+          if (!member) {
+
+            return;
+
+          }
+
+
+          /* -----------------------------------------------
+             NAME
+          ------------------------------------------------ */
+
+          setText(
+            nameElement,
+            member.full_name,
+            "सदस्य"
+          );
+
+
+          /* -----------------------------------------------
+             MEMBER ID
+          ------------------------------------------------ */
+
+          setText(
+            idElement,
+            member.member_id,
+            "—"
+          );
+
+
+          /* -----------------------------------------------
+             MEMBERSHIP YEAR
+          ------------------------------------------------ */
+
+          let membershipYear =
+            new Date().getFullYear();
+
+
+          if (member.created_at) {
+
+            const createdDate =
+              new Date(
+                member.created_at
+              );
+
+
+            if (
+              !isNaN(
+                createdDate.getTime()
+              )
+            ) {
+
+              membershipYear =
+                createdDate.getFullYear();
+
+            }
+
+          }
+
+
+          setText(
+            yearElement,
+            membershipYear,
+            "—"
+          );
+
+
+          setText(
+            cardYear,
+            membershipYear,
+            "2026"
+          );
+
+
+          /* -----------------------------------------------
+             STATE
+          ------------------------------------------------ */
+
+          setText(
+            stateElement,
+            member.state,
+            "—"
+          );
+
+
+          /* -----------------------------------------------
+             DISTRICT
+          ------------------------------------------------ */
+
+          setText(
+            districtElement,
+            member.district,
+            "—"
+          );
+
+
+          /* -----------------------------------------------
+             STATUS
+          ------------------------------------------------ */
+
+          const status =
+            String(
+              member.membership_status ||
+              "active"
+            ).toLowerCase();
+
+
+          if (statusElement) {
+
+            let statusText =
+              status.toUpperCase();
+
+
+            if (
+              status === "active"
+            ) {
+
+              statusText =
+                "ACTIVE";
+
+            }
+
+
+            statusElement.innerHTML =
+              "<span></span> " +
+              statusText;
+
+          }
+
+
+          /* -----------------------------------------------
+             PHOTO
+          ------------------------------------------------ */
+
+          renderPhoto(
+            member.photo_url
+          );
+
+
+          /* -----------------------------------------------
+             QR
+          ------------------------------------------------ */
+
+          renderQR(
+            member.member_id
+          );
+
+
+          /* -----------------------------------------------
+             CACHE
+             
+             IMPORTANT:
+             यह केवल सुविधा के लिए cache है।
+             Authentication इसके ऊपर निर्भर नहीं है।
+          ------------------------------------------------ */
+
+          try {
+
+            localStorage.setItem(
+              "yja_member_name",
+              member.full_name || ""
+            );
+
+
+            localStorage.setItem(
+              "yja_member_email",
+              member.email || ""
+            );
+
+
+            localStorage.setItem(
+              "yja_member_mobile",
+              member.mobile || ""
+            );
+
+
+            localStorage.setItem(
+              "yja_member_state",
+              member.state || ""
+            );
+
+
+            localStorage.setItem(
+              "yja_member_district",
+              member.district || ""
+            );
+
+
+            localStorage.setItem(
+              "yja_member_id",
+              member.member_id || ""
+            );
+
+
+            localStorage.setItem(
+              "yja_member_interests",
+              JSON.stringify(
+                member.interests || []
+              )
+            );
+
+
+            if (member.photo_url) {
+
+              localStorage.setItem(
+                "yja_member_photo",
+                member.photo_url
+              );
+
+            }
+
+          }
+
+          catch (cacheError) {
+
+            console.warn(
+              "Local cache save failed:",
+              cacheError
+            );
+
+          }
+
+        }
+
+
+
+        /* =================================================
+           MAIN
+        ================================================== */
+
+        try {
+
+
+          showLoading();
+
+
+          console.log(
+            "STEP 1: Supabase client तैयार है"
+          );
+
+
+
+          /* =================================================
+             GET AUTHENTICATED USER
+             
+             getUser() server से authenticated user
+             verify करता है।
+          ================================================== */
+
+          console.log(
+            "STEP 2: Login session जाँची जा रही है..."
+          );
+
+
+          const {
+            data: userData,
+            error: userError
+          } =
+            await supabaseClient.auth.getUser();
+
+
+          if (userError) {
+
+            console.error(
+              "AUTH USER ERROR:",
+              userError
+            );
+
+
+            window.location.replace(
+              "login.html"
+            );
+
+
+            return;
+
+          }
+
+
+          const user =
+            userData &&
+            userData.user
+              ? userData.user
+              : null;
+
+
+
+          /* =================================================
+             NO USER
+          ================================================== */
+
+          if (!user) {
+
+            console.warn(
+              "कोई authenticated user नहीं मिला।"
+            );
+
+
+            window.location.replace(
+              "login.html"
+            );
+
+
+            return;
+
+          }
+
+
+          console.log(
+            "STEP 3: Authenticated User:",
+            user.id
+          );
+
+
+
+          /* =================================================
+             LOAD MEMBER
+          ================================================== */
+
+          console.log(
+            "STEP 4: Member data load हो रहा है..."
+          );
+
+
+          const {
+            data: member,
+            error: memberError
+          } =
+            await supabaseClient
+              .from("members")
+              .select(
+                "id,user_id,member_id,full_name,email,mobile,state,district,interests,photo_url,membership_status,created_at"
+              )
+              .eq(
+                "user_id",
+                user.id
+              )
+              .maybeSingle();
+
+
+
+          /* =================================================
+             MEMBER QUERY ERROR
+          ================================================== */
+
+          if (memberError) {
+
+            console.error(
+              "MEMBER QUERY ERROR:",
+              memberError
+            );
+
+
+            showCardError(
+              "सदस्य डेटा लोड नहीं हुआ",
+              memberError.message ||
+              "Supabase से member data नहीं मिला।"
+            );
+
+
+            return;
+
+          }
+
+
+
+          /* =================================================
+             MEMBER NOT FOUND
+          ================================================== */
+
+          if (!member) {
+
+            console.error(
+              "MEMBER NOT FOUND FOR USER:",
+              user.id
+            );
+
+
+            showCardError(
+              "सदस्य रिकॉर्ड नहीं मिला",
+              "इस Login के user_id से members table में रिकॉर्ड नहीं मिला।"
+            );
+
+
+            return;
+
+          }
+
+
+
+          /* =================================================
+             SUCCESS
+          ================================================== */
+
+          console.log(
+            "STEP 5: Member मिल गया:",
+            member.member_id
+          );
+
+
+          renderMember(
+            member
+          );
+
+
+          console.log(
+            "STEP 6: Member Card तैयार है।"
+          );
+
+        }
+
+
+        catch (error) {
+
+
+          console.error(
+            "MEMBER CARD FATAL ERROR:",
+            error
+          );
+
+
+          showCardError(
+            "सदस्य जानकारी लोड नहीं हो सकी",
+            error &&
+            error.message
+              ? error.message
+              : String(error)
+          );
+
+        }
+
+      }
+
+    );
+
+  </script>
+
+
+</body>
+
+    </html>a
