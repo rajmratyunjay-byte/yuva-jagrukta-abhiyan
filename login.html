@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#07111c"
+  >
+
+  <meta
+    name="description"
+    content="सदस्य लॉगिन | युवा जागरूकता अभियान"
+  >
+
+  <title>
+    सदस्य लॉगिन | युवा जागरूकता अभियान
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="register.css"
+  >
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+
+<body>
+
+
+  <!-- =================================================
+       HEADER
+  ================================================== -->
+
+  <header class="register-header">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <img
+        src="logo-round.png"
+        alt="युवा जागरूकता अभियान"
+      >
+
+      <div>
+
+        <strong>
+          युवा जागरूकता अभियान
+        </strong>
+
+        <span>
+          युवा शक्ति • सनातन संस्कृति • राष्ट्र निर्माण
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <a
+      href="index.html"
+      class="back-btn"
+    >
+      ← वेबसाइट
+    </a>
+
+  </header>
+
+
+
+  <!-- =================================================
+       MAIN
+  ================================================== -->
+
+  <main class="register-page">
+
+
+    <section class="register-intro">
+
+      <span class="kicker">
+        MEMBER LOGIN
+      </span>
+
+
+      <h1>
+        सदस्य <em>लॉगिन</em>
+      </h1>
+
+
+      <p>
+        अपने सदस्य खाते में लॉगिन करके अपना डिजिटल सदस्य कार्ड देखें।
+      </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         LOGIN CARD
+    ================================================== -->
+
+    <section class="register-card">
+
+
+      <div class="card-heading">
+
+        <div>
+
+          <span>
+            SECURE ACCESS
+          </span>
+
+
+          <h2>
+            सदस्य लॉगिन
+          </h2>
+
+        </div>
+
+
+        <div class="step-badge">
+          LOGIN
+        </div>
+
+      </div>
+
+
+      <div class="gold-line"></div>
+
+
+
+      <!-- =================================================
+           LOGIN FORM
+      ================================================== -->
+
+      <form
+        id="loginForm"
+      >
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group full">
+
+          <label for="email">
+
+            ईमेल
+
+            <span>*</span>
+
+          </label>
+
+
+          <input
+            type="email"
+            id="email"
+            placeholder="example@gmail.com"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group full">
+
+          <label for="password">
+
+            पासवर्ड
+
+            <span>*</span>
+
+          </label>
+
+
+          <input
+            type="password"
+            id="password"
+            placeholder="अपना पासवर्ड दर्ज करें"
+            autocomplete="current-password"
+            minlength="8"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button
+          type="submit"
+          class="submit-btn"
+          id="loginBtn"
+        >
+
+          <span>
+            लॉगिन करें
+          </span>
+
+          <b>
+            →
+          </b>
+
+        </button>
+
+
+
+        <!-- MESSAGE -->
+
+        <div
+          id="loginMessage"
+          class="form-message"
+          aria-live="polite"
+        ></div>
+
+
+      </form>
+
+
+
+      <!-- =================================================
+           REGISTER LINK
+      ================================================== -->
+
+      <div
+        style="
+          text-align:center;
+          margin-top:25px;
+          padding-top:20px;
+          border-top:1px solid rgba(255,255,255,0.08);
+        "
+      >
+
+        <p
+          style="
+            margin:0;
+            opacity:0.7;
+          "
+        >
+          अभी सदस्य नहीं हैं?
+        </p>
+
+
+        <a
+          href="register.html"
+          style="
+            display:inline-block;
+            margin-top:8px;
+            text-decoration:none;
+            font-weight:700;
+          "
+        >
+          नया सदस्य पंजीकरण करें →
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECURITY INFO
+    ================================================== -->
+
+    <section
+      class="registration-benefits"
+    >
+
+
+      <div class="benefit">
+
+        <span>
+          🔐
+        </span>
+
+
+        <h3>
+          सुरक्षित लॉगिन
+        </h3>
+
+
+        <p>
+          आपका लॉगिन Supabase Authentication द्वारा सुरक्षित किया जाता है।
+        </p>
+
+      </div>
+
+
+
+      <div class="benefit">
+
+        <span>
+          🪪
+        </span>
+
+
+        <h3>
+          आपका Member Card
+        </h3>
+
+
+        <p>
+          लॉगिन के बाद केवल आपके खाते से जुड़ा सदस्य कार्ड दिखाया जाएगा।
+        </p>
+
+      </div>
+
+
+
+      <div class="benefit">
+
+        <span>
+          ✓
+        </span>
+
+
+        <h3>
+          सुरक्षित Session
+        </h3>
+
+
+        <p>
+          लॉगिन session के आधार पर सदस्य की पहचान की जाएगी।
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =================================================
+       LOGIN JAVASCRIPT
+  ================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      async function () {
+
+
+        /* =============================================
+           SUPABASE CONFIG
+        ============================================= */
+
+        const SUPABASE_URL =
+          "https://chgkmufptsacunrxnxpm.supabase.co";
+
+
+        const SUPABASE_KEY =
+          "sb_publishable_ydpmmLDO7S3EXUC_DdsiVA_vdXvMbSw";
+
+
+        const supabaseClient =
+          window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+          );
+
+
+
+        /* =============================================
+           ELEMENTS
+        ============================================= */
+
+        const form =
+          document.getElementById(
+            "loginForm"
+          );
+
+
+        const emailInput =
+          document.getElementById(
+            "email"
+          );
+
+
+        const passwordInput =
+          document.getElementById(
+            "password"
+          );
+
+
+        const loginBtn =
+          document.getElementById(
+            "loginBtn"
+          );
+
+
+        const message =
+          document.getElementById(
+            "loginMessage"
+          );
+
+
+
+        /* =============================================
+           MESSAGE
+        ============================================= */
+
+        function showMessage(
+          text,
+          type
+        ) {
+
+          message.textContent =
+            text;
+
+
+          message.className =
+            "form-message " +
+            type;
+
+        }
+
+
+
+        /* =============================================
+           CHECK EXISTING SESSION
+        ============================================= */
+
+        try {
+
+          const {
+            data,
+            error
+          } =
+            await supabaseClient
+              .auth
+              .getSession();
+
+
+          if (
+            !error &&
+            data &&
+            data.session
+          ) {
+
+            showMessage(
+              "आप पहले से लॉगिन हैं। Member Card खोला जा रहा है...",
+              "success"
+            );
+
+
+            setTimeout(
+              function () {
+
+                window.location.href =
+                  "member-card.html";
+
+              },
+              700
+            );
+
+          }
+
+        }
+
+        catch (error) {
+
+          console.warn(
+            "Session check:",
+            error
+          );
+
+        }
+
+
+
+        /* =============================================
+           LOGIN
+        ============================================= */
+
+        form.addEventListener(
+          "submit",
+          async function (event) {
+
+            event.preventDefault();
+
+
+            loginBtn.disabled =
+              true;
+
+
+            const email =
+              emailInput.value
+                .trim()
+                .toLowerCase();
+
+
+            const password =
+              passwordInput.value;
+
+
+            if (!email) {
+
+              showMessage(
+                "कृपया अपना ईमेल दर्ज करें।",
+                "error"
+              );
+
+              loginBtn.disabled =
+                false;
+
+              return;
+
+            }
+
+
+            if (
+              password.length < 8
+            ) {
+
+              showMessage(
+                "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए।",
+                "error"
+              );
+
+              loginBtn.disabled =
+                false;
+
+              return;
+
+            }
+
+
+
+            try {
+
+
+              showMessage(
+                "लॉगिन किया जा रहा है...",
+                "success"
+              );
+
+
+
+              /* =====================================
+                 SUPABASE LOGIN
+              ===================================== */
+
+              const {
+                data,
+                error
+              } =
+                await supabaseClient
+                  .auth
+                  .signInWithPassword({
+
+                    email:
+                      email,
+
+                    password:
+                      password
+
+                  });
+
+
+              if (error) {
+
+                throw error;
+
+              }
+
+
+              if (
+                !data ||
+                !data.user
+              ) {
+
+                throw new Error(
+                  "लॉगिन session नहीं बन सकी।"
+                );
+
+              }
+
+
+
+              /* =====================================
+                 LOGIN SUCCESS
+              ===================================== */
+
+              showMessage(
+                "लॉगिन सफल! आपका Member Card खोला जा रहा है...",
+                "success"
+              );
+
+
+              setTimeout(
+                function () {
+
+                  window.location.href =
+                    "member-card.html";
+
+                },
+                700
+              );
+
+
+            }
+
+            catch (error) {
+
+
+              console.error(
+                "Login Error:",
+                error
+              );
+
+
+              let errorMessage =
+                error.message ||
+                "लॉगिन नहीं हो सका।";
+
+
+              /* =====================================
+                 FRIENDLY ERRORS
+              ===================================== */
+
+              const lowerMessage =
+                errorMessage.toLowerCase();
+
+
+              if (
+                lowerMessage.includes(
+                  "invalid login credentials"
+                )
+              ) {
+
+                errorMessage =
+                  "ईमेल या पासवर्ड गलत है।";
+
+              }
+
+
+              else if (
+                lowerMessage.includes(
+                  "email not confirmed"
+                )
+              ) {
+
+                errorMessage =
+                  "आपका ईमेल अभी confirm नहीं हुआ है।";
+
+              }
+
+
+              else if (
+                lowerMessage.includes(
+                  "too many requests"
+                )
+              ) {
+
+                errorMessage =
+                  "बहुत अधिक प्रयास हुए हैं। कुछ समय बाद फिर प्रयास करें।";
+
+              }
+
+
+              showMessage(
+                "लॉगिन असफल: " +
+                errorMessage,
+                "error"
+              );
+
+
+              loginBtn.disabled =
+                false;
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+        </html>
