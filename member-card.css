@@ -1,0 +1,1285 @@
+/* =========================================================
+   युवा जागरूकता अभियान
+   PREMIUM DIGITAL MEMBER ID CARD
+   FINAL CSS
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Noto Sans Devanagari",
+    Arial,
+    sans-serif;
+
+  min-height: 100vh;
+  color: #f5f7fa;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(245, 184, 61, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(255, 110, 20, 0.06),
+      transparent 30%
+    ),
+    #07111c;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.member-header {
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 10px clamp(14px, 4vw, 55px);
+
+  background: rgba(5, 13, 22, 0.96);
+
+  border-bottom:
+    1px solid rgba(245, 184, 61, 0.15);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  backdrop-filter: blur(14px);
+}
+
+.member-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: white;
+  text-decoration: none;
+
+  min-width: 0;
+}
+
+.header-logo {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #f5b83d;
+
+  box-shadow:
+    0 0 18px rgba(245, 184, 61, 0.25);
+
+  flex-shrink: 0;
+}
+
+.member-brand strong {
+  display: block;
+
+  font-size: 16px;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+.member-brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #d2a948;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.back-btn {
+  flex-shrink: 0;
+
+  color: #f5b83d;
+
+  text-decoration: none;
+
+  padding: 9px 16px;
+
+  border:
+    1px solid rgba(245, 184, 61, 0.4);
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.25s;
+}
+
+.back-btn:hover {
+  background: #f5b83d;
+  color: #07111c;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.member-page {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.page-intro {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  padding: 55px 18px 25px;
+
+  text-align: center;
+}
+
+.intro-kicker {
+  color: #f5b83d;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 800;
+}
+
+.page-intro h1 {
+  margin-top: 12px;
+
+  font-size: clamp(36px, 7vw, 58px);
+
+  line-height: 1.1;
+
+  font-weight: 900;
+}
+
+.page-intro h1 em {
+  color: #f5b83d;
+  font-style: normal;
+}
+
+.page-intro p {
+  max-width: 650px;
+
+  margin: 17px auto 0;
+
+  color: #aeb8c4;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   CARD STAGE
+   ========================================================= */
+
+.card-stage {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 25px 14px 35px;
+}
+
+/* =========================================================
+   DIGITAL ID CARD
+   ========================================================= */
+
+.digital-card {
+  position: relative;
+
+  width: min(760px, 94vw);
+
+  /*
+    Standard ID-card proportion
+  */
+  aspect-ratio: 1.586 / 1;
+
+  padding: 22px 25px;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(245, 184, 61, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 90%,
+      rgba(15, 85, 130, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #102636,
+      #071521 68%,
+      #08111a
+    );
+
+  border:
+    1px solid rgba(245, 184, 61, 0.4);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Decorative circle */
+
+.digital-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(245, 184, 61, 0.08);
+
+  right: -150px;
+  top: -130px;
+
+  pointer-events: none;
+}
+
+.digital-card::after {
+  content: "ॐ";
+
+  position: absolute;
+
+  right: 20px;
+  bottom: 8px;
+
+  font-size: 125px;
+
+  color: rgba(245, 184, 61, 0.035);
+
+  font-weight: 900;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.card-top {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  flex-shrink: 0;
+}
+
+.card-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.card-logo {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border:
+    2px solid #f5b83d;
+
+  box-shadow:
+    0 0 18px rgba(245, 184, 61, 0.22);
+
+  flex-shrink: 0;
+}
+
+.card-brand strong {
+  display: block;
+
+  font-size: 18px;
+
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+.card-brand span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #f5b83d;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  font-weight: 800;
+}
+
+.card-status {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: rgba(65, 200, 120, 0.08);
+
+  border:
+    1px solid rgba(65, 200, 120, 0.25);
+
+  color: #8fe2b1;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  font-weight: 800;
+
+  flex-shrink: 0;
+}
+
+.card-status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #54d68c;
+
+  box-shadow:
+    0 0 9px #54d68c;
+}
+
+/* =========================================================
+   GOLD LINE
+   ========================================================= */
+
+.gold-line {
+  position: relative;
+  z-index: 5;
+
+  height: 1px;
+
+  margin: 11px 0 13px;
+
+  flex-shrink: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f5b83d,
+      rgba(245,184,61,0.08)
+    );
+}
+
+/* =========================================================
+   MEMBER INFORMATION
+   ========================================================= */
+
+.member-information {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns: 105px 1fr;
+
+  gap: 17px;
+
+  align-items: center;
+
+  flex: 1;
+
+  min-height: 0;
+}
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+.member-photo-wrap {
+  text-align: center;
+}
+
+.member-photo {
+  width: 100px;
+  height: 120px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border:
+    1px dashed rgba(245,184,61,0.42);
+
+  background:
+    linear-gradient(
+      145deg,
+      #102536,
+      #091722
+    );
+
+  color: #738294;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.member-photo-wrap small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #748292;
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   MEMBER DETAILS
+   ========================================================= */
+
+.member-details {
+  min-width: 0;
+}
+
+.member-label {
+  display: block;
+
+  color: #f5b83d;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  font-weight: 800;
+
+  margin-bottom: 2px;
+}
+
+.member-details h2 {
+  font-size: 27px;
+
+  line-height: 1.1;
+
+  font-weight: 900;
+
+  margin-bottom: 6px;
+
+  white-space: nowrap;
+}
+
+.member-id {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-bottom: 8px;
+}
+
+.member-id span {
+  color: #7d8996;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+.member-id strong {
+  color: #f5b83d;
+
+  font-size: 14px;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   STATE / DISTRICT
+   ========================================================= */
+
+.member-meta {
+  display: flex;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.member-meta div {
+  padding: 6px 8px;
+
+  min-width: 0;
+
+  flex: 1;
+
+  border-radius: 8px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+}
+
+.member-meta span {
+  display: block;
+
+  color: #748292;
+
+  font-size: 7px;
+
+  margin-bottom: 2px;
+}
+
+.member-meta strong {
+  display: block;
+
+  color: #e9edf1;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   QR VERIFICATION
+   ========================================================= */
+
+.verification-area {
+  position: absolute;
+
+  z-index: 10;
+
+  right: 24px;
+
+  bottom: 47px;
+
+  width: 102px;
+
+  padding: 7px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(4, 12, 20, 0.75);
+
+  border:
+    1px solid rgba(245,184,61,0.2);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.verification-text {
+  width: 100%;
+
+  text-align: center;
+}
+
+.verify-icon {
+  display: none;
+}
+
+.verification-text strong {
+  display: block;
+
+  color: #f5b83d;
+
+  font-size: 8px;
+}
+
+.verification-text small {
+  display: none;
+}
+
+/* =========================================================
+   MEMBER QR
+   ========================================================= */
+
+.member-qr {
+  width: 84px;
+  height: 84px;
+
+  padding: 4px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+
+  border-radius: 7px;
+
+  flex-shrink: 0;
+}
+
+.member-qr canvas,
+.member-qr img {
+  width: 76px !important;
+  height: 76px !important;
+
+  display: block;
+}
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.card-footer {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 7px;
+
+  padding-top: 7px;
+
+  height: 25px;
+
+  flex-shrink: 0;
+
+  border-top:
+    1px solid rgba(255,255,255,0.07);
+}
+
+.card-footer span {
+  color: #f5b83d;
+
+  font-size: 14px;
+
+  font-weight: 900;
+}
+
+.card-footer p {
+  flex: 1;
+
+  text-align: center;
+
+  color: #8995a2;
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.card-actions {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  padding: 0 18px 65px;
+}
+
+.card-actions button,
+.card-actions a {
+  min-height: 46px;
+
+  padding: 11px 22px;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: 0.25s;
+}
+
+.action-primary {
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd15c,
+      #f0a929
+    );
+
+  color: #07111c;
+
+  box-shadow:
+    0 10px 28px rgba(245,184,61,0.2);
+}
+
+.action-primary:hover {
+  transform: translateY(-2px);
+}
+
+.action-secondary {
+  color: #f5b83d;
+
+  border:
+    1px solid rgba(245,184,61,0.35);
+
+  background: transparent;
+}
+
+.action-secondary:hover {
+  background: #f5b83d;
+
+  color: #07111c;
+}
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.benefits {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 20px 18px 80px;
+}
+
+.section-title {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.section-title span {
+  color: #f5b83d;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  font-weight: 800;
+}
+
+.section-title h2 {
+  margin-top: 8px;
+
+  font-size: clamp(28px, 5vw, 42px);
+
+  font-weight: 900;
+}
+
+.benefit-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.benefit-card {
+  padding: 22px 18px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  border:
+    1px solid rgba(245,184,61,0.12);
+
+  transition: 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(245,184,61,0.35);
+}
+
+.benefit-card > div {
+  color: #f5b83d;
+
+  font-size: 23px;
+
+  margin-bottom: 12px;
+}
+
+.benefit-card h3 {
+  font-size: 16px;
+
+  margin-bottom: 7px;
+}
+
+.benefit-card p {
+  color: #84909d;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .page-intro {
+    padding-top: 45px;
+  }
+
+  .benefit-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .member-header {
+    min-height: 68px;
+
+    padding: 9px 12px;
+  }
+
+  .header-logo {
+    width: 43px;
+    height: 43px;
+  }
+
+  .member-brand strong {
+    font-size: 13px;
+  }
+
+  .member-brand span {
+    font-size: 8px;
+  }
+
+  .back-btn {
+    padding: 7px 11px;
+
+    font-size: 11px;
+  }
+
+  /* Intro */
+
+  .page-intro {
+    padding:
+      38px 15px 18px;
+  }
+
+  .intro-kicker {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+  .page-intro h1 {
+    font-size: 35px;
+  }
+
+  .page-intro p {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  /* Card */
+
+  .card-stage {
+    padding:
+      14px 7px 28px;
+  }
+
+  .digital-card {
+    width: 94vw;
+
+    aspect-ratio: 1.586 / 1;
+
+    padding:
+      13px 14px;
+
+    border-radius: 16px;
+  }
+
+  /* Card header */
+
+  .card-logo {
+    width: 37px;
+    height: 37px;
+  }
+
+  .card-brand {
+    gap: 7px;
+  }
+
+  .card-brand strong {
+    font-size: 11px;
+  }
+
+  .card-brand span {
+    font-size: 5.5px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .card-status {
+    font-size: 5.5px;
+
+    padding: 3px 5px;
+  }
+
+  .card-status span {
+    width: 5px;
+    height: 5px;
+  }
+
+  .gold-line {
+    margin:
+      6px 0 7px;
+  }
+
+  /* Member area */
+
+  .member-information {
+    grid-template-columns:
+      60px 1fr;
+
+    gap: 9px;
+  }
+
+  .member-photo {
+    width: 58px;
+    height: 72px;
+
+    border-radius: 7px;
+
+    font-size: 6px;
+  }
+
+  .member-photo-wrap small {
+    display: none;
+  }
+
+  .member-label {
+    font-size: 5.5px;
+
+    letter-spacing: 1px;
+  }
+
+  .member-details h2 {
+    font-size: 17px;
+
+    margin-bottom: 3px;
+  }
+
+  .member-id {
+    gap: 3px;
+
+    margin-bottom: 4px;
+  }
+
+  .member-id span {
+    font-size: 4.8px;
+  }
+
+  .member-id strong {
+    font-size: 8.5px;
+  }
+
+  /* Meta */
+
+  .member-meta {
+    gap: 3px;
+
+    padding-right: 82px;
+  }
+
+  .member-meta div {
+    padding:
+      3px 4px;
+
+    border-radius: 5px;
+  }
+
+  .member-meta span {
+    font-size: 4.5px;
+  }
+
+  .member-meta strong {
+    font-size: 6.5px;
+  }
+
+  /* QR */
+
+  .verification-area {
+    right: 12px;
+
+    bottom: 35px;
+
+    width: 70px;
+
+    padding: 3px;
+
+    border-radius: 6px;
+
+    gap: 3px;
+  }
+
+  .verification-text strong {
+    font-size: 5.5px;
+  }
+
+  .member-qr {
+    width: 62px;
+    height: 62px;
+
+    padding: 3px;
+
+    border-radius: 5px;
+  }
+
+  .member-qr canvas,
+  .member-qr img {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  /* Footer */
+
+  .card-footer {
+    margin-top: 4px;
+
+    padding-top: 4px;
+
+    height: 18px;
+  }
+
+  .card-footer span {
+    font-size: 8px;
+  }
+
+  .card-footer p {
+    font-size: 4.5px;
+  }
+
+  /* Buttons */
+
+  .card-actions {
+    padding-bottom: 45px;
+  }
+
+  /* Benefits */
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .member-brand span {
+    display: none;
+  }
+
+  .back-btn {
+    font-size: 10px;
+
+    padding:
+      6px 9px;
+  }
+
+  .digital-card {
+    width: 95vw;
+
+    padding:
+      11px;
+  }
+
+  .member-information {
+    grid-template-columns:
+      54px 1fr;
+
+    gap: 7px;
+  }
+
+  .member-photo {
+    width: 52px;
+    height: 65px;
+  }
+
+  .member-details h2 {
+    font-size: 15px;
+  }
+
+  .member-id strong {
+    font-size: 7.5px;
+  }
+
+  .verification-area {
+    right: 9px;
+
+    bottom: 32px;
+
+    width: 64px;
+  }
+
+  .member-qr {
+    width: 57px;
+    height: 57px;
+  }
+
+  .member-qr canvas,
+  .member-qr img {
+    width: 51px !important;
+    height: 51px !important;
+  }
+}
+
+/* =========================================================
+   PRINT / PDF
+   केवल ID CARD प्रिंट होगा
+   ========================================================= */
+
+@media print {
+
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 100%;
+    min-height: 0;
+
+    background: white !important;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .member-header,
+  .page-intro,
+  .card-actions,
+  .benefits {
+    display: none !important;
+  }
+
+  .member-page {
+    width: 100%;
+  }
+
+  .card-stage {
+    width: 100%;
+
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+  }
+
+  .digital-card {
+    width: 760px;
+
+    max-width: 90vw;
+
+    aspect-ratio: 1.586 / 1;
+
+    box-shadow: none;
+
+    print-color-adjust: exact;
+
+    -webkit-print-color-adjust: exact;
+  }
+  }
