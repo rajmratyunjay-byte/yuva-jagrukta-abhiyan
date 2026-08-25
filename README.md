@@ -1,1 +1,0 @@
-# yuva-jagrukta-abhiyan
